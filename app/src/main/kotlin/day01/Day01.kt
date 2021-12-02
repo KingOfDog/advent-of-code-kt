@@ -13,9 +13,29 @@ fun main(args: Array<String>) {
 
 
 fun solveDay01Part1(input: List<String>): Int {
-    TODO()
+    var lastInput = input.first().toInt()
+    var counter = 0
+    input.subList(1, input.size).forEach { it ->
+        val number = it.toInt()
+        if (number > lastInput) counter++
+        lastInput = number
+    }
+    return counter
 }
 
 fun solveDay01Part2(input: List<String>): Int {
-    TODO()
+    val numbers = parseInputs(input)
+    val window = numbers.subList(0, 3).toMutableList()
+    var currentSum = window.sum()
+    var counter = 0
+    numbers.forEach { number ->
+        window.removeAt(0)
+        window.add(number)
+        val nextSum = window.sum()
+        if (nextSum > currentSum) counter++
+        currentSum = nextSum
+    }
+    return counter
 }
+
+fun parseInputs(input: List<String>): List<Int> = input.map { it.toInt() }
