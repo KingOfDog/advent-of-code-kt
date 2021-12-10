@@ -6,11 +6,21 @@ import io.kotest.matchers.shouldBe
 class Day10Test : FreeSpec({
 
     val sampleInput: List<String> = listOf(
+        "[({(<(())[]>[[{[]{<()<>>",
+        "[(()[<>])]({[<{<<[]>>(",
+        "{([(<{}[<>[]}>{[]{[(<()>",
+        "(((({<>}<{<{<>}{[]{[]{}",
+        "[[<[([]))<([[{}[[()]]]",
+        "[{[{({}]{}}([{[{{{}}([]",
+        "{<[[]]>}<{[{[{[]{()[[[]",
+        "[<(<(<(<{}))><([]([]()",
+        "<{([([[(<>()){}]>(<<{{",
+        "<{([{{}}[<[[[<>{}]]]>[]]",
     )
 
-    val sampleSolutionPart1: Int = -1
+    val sampleSolutionPart1: Int = 26397
 
-    val sampleSolutionPart2: Int = -1
+    val sampleSolutionPart2: Int = 288957
 
     "Solving day 10" - {
         "part 1 for the sample input should return the correct output" {
